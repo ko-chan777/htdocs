@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ja">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style type="text/css">
+
+</style>
+
+<head>
+<meta charset="utf-8">
+<title>こうちゃんの星占い</title>
+</head>
+
+<center>
+<h1><font color="white">Horoscope</font></h1>
+</center>
+
+<center>
+<h3><font color="white">Select your Sign, Bloodtype and Gender</font></h3>
+</center>
+<body style="background-image: url(space1.gif);">
+
+<center>
+  <form method="post" action="horoscorpkekka.php">
+  <tr>
+                <td>
+                <p><font color="white">Sign:</font><input type="seizaselect" name="seizamei" list="data8">
+                <datalist id="data8">
+                  <option value="牡羊座"></option>
+                  <option value="牡牛座"></option>
+                  <option value="双子座"></option>
+                  <option value="蟹座"></option>
+                  <option value="獅子座"></option>
+                  <option value="乙女座"></option>
+                  <option value="天秤座"></option>
+                  <option value="蠍座"></option>
+                  <option value="射手座"></option>
+                  <option value="山羊座"></option>
+                  <option value="水瓶座"></option>
+                  <option value="魚座"></option>
+                </datalist></p></td>
+
+                <td>
+                <p><font color="white">Bloodtype:</font><input type="ketsuekigtaselect" name="ketsuekigata" list="data9">
+                <datalist id="data9">
+                  <option value="A"></option>
+                  <option value="B"></option>
+                  <option value="O"></option>
+                  <option value="AB"></option>
+                </datalist>            
+                </p></td>
+
+                <td>
+                <p><font color="white">Gender:</font><input type="genderselect" name="gender" list="data10">
+                <datalist id="data10">
+                  <option value="男"></option>
+                  <option value="女"></option>
+                </datalist>            
+                </p></td>
+   </tr>
+    <input type="submit" value="Click after full choice">
+    </br>
+  </form>
+  <script>
+    function resize() {
+      var resizeText = document.getElementsByClassName('js-resize-text');
+      for (let i = 0; i < resizeText.length; i++) {
+        var body = document.getElementsByTagName('body')[0];
+        var wrapper = resizeText[i].clientWidth / body.clientWidth;
+        var fontSizeVw = wrapper / resizeText[i].innerHTML.length;
+        // ▼ letter-spacingを0.1emに指定していた場合、1.1をかける
+        // var fontSizeVw = wrapper / (resizeText[i].innerHTML.length; * 1.1);
+        resizeText[i].style.fontSize = fontSizeVw * 100 + 'vw' ;
+      }
+    }
+    // 初期
+    window.onload = function(){
+      resize();
+    }
+    // リサイズした時
+    window.onresize = function(){
+      resize();
+    }
+  </script>
+</br>
+  <center>
+  <img src="12sign.png" width="350px" height="350px">
+  </center>
+</center>
+
+</body>
+</html>
